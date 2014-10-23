@@ -1,0 +1,39 @@
+Server Software:        nginx/1.6.2
+Server Hostname:        localhost
+Server Port:            80
+
+Document Path:          /
+Document Length:        1993 bytes
+
+Concurrency Level:      10
+Time taken for tests:   60.006 seconds
+Complete requests:      16605
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      16605
+Keep-Alive requests:    7
+Total transferred:      36199089 bytes
+HTML transferred:       33093765 bytes
+Requests per second:    276.72 [#/sec] (mean)
+Time per request:       36.137 [ms] (mean)
+Time per request:       3.614 [ms] (mean, across all concurrent requests)
+Transfer rate:          589.12 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       0
+Processing:     3   36  17.0     32     147
+Waiting:        3   36  17.0     32     147
+Total:          3   36  17.0     32     147
+
+Percentage of the requests served within a certain time (ms)
+  50%     32
+  66%     38
+  75%     44
+  80%     47
+  90%     59
+  95%     70
+  98%     82
+  99%     92
+ 100%    147 (longest request)
+
