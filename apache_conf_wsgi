@@ -1,0 +1,12 @@
+<VirtualHost localhost:8080>
+
+ServerName wsgi.djangoserver
+DocumentRoot /home/belka/web/ask/wsgi
+
+<Directory /home/belka/web/ask/wsgi>
+Order allow,deny
+Allow from all
+</Directory>
+
+WSGIScriptAlias / /home/belka/web/ask/wsgi/app.wsgi
+</VirtualHost>
