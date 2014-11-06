@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
+INSTALLED_APPS = (
+    'django.contrib.staticfiles',
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -23,6 +25,11 @@ SECRET_KEY = 'b6xvolt0q#=$ofi2!5db=t--8r&p$s7*+9@dllw7694e%uw_r3'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+TEMPLATE_DIRS = (
+    '/home/belka/web/ask/templates',
+)
+
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

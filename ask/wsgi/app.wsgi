@@ -2,7 +2,7 @@ from urlparse import parse_qs
 
 def application(environ, start_response):
     status = '200 OK'
-    output = 'Hello world!'
+    output = 'Hello worl!'
 
     # get parameters
     output += '\nGET:'

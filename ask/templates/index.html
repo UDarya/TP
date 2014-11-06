@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h2>Best questions</h2>
+
+{% for i in "12345" %}
+    <div class="question">
+        <div class="row">
+            <div class="span2">
+                <img src="http://lorempixel.com/120/120/">
+            </div>
+            <div class="span6">
+                <h4><a href="#">How to build lunopark</a></h4>
+                <p>Some text long long long</p>
+                <div>
+                    <a href="#">answers <span class="badge">33</span></a>
+                    Tags: lol, pop, rock
+                </div>                          
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="pagination">
+        <ul>
+            <li><a href="#">Prev</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block login %}
+        <ul class="nav pull-right">
+          <li><img src="http://lorempixel.com/35/35/"></li>
+          <li><a href="#">setting</a></li>
+          <li><a href="#">log out</a></li>
+        </ul>
+{% endblock %}
+
+{% block logout %}
+        <ul class="nav pull-right">
+          <li><a href="#">log in</a></li>
+          <li><a href="#">register</a></li>
+        </ul>
+{% endblock %}
