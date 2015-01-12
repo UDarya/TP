@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+<h2>Question</h2>
+
+{% block main %}
+<hr>
+	<div class="question1">
+	        <div class="row">
+	            <div class="span2">
+	                <img src="http://lorempixel.com/150/150/">
+	                <div class="row">
+	            		<div class="span">
+	            			<div class="like"><span class="badge">{{q_ans.author.rating}}</span></div>
+	            		</div>            
+	           			<div class="span1">               
+	                    	<a class="btn btn-mini" href="#"> <i class="icon-chevron-up"></i></a>
+	                    	<div><a class="btn btn-mini" href="#"> <i class="icon-chevron-down"></i></a></div>
+	               		</div>
+	            	</div>
+	            </div>
+	            <div class="span6">
+	                <h4>{{q_ans.title}}</h4>
+	                <p>{{q_ans.text}}</p>
+	                <div>
+	                    Tags: 
+                      	{% for tag in q_ans.tags.all %}
+                   			<a> {{tag.word}}</a>
+                    	{% endfor %}
+	                </div>                          
+	            </div>
+	        </div>
+	    </div>
+</hr>
+{% endblock %}
+
+{% block logout %}
+        <ul class="nav pull-right">
+          <li><a href="http://localhost/login">log in</a></li>
+          <li><a href="#">register</a></li>
+        </ul>
+{% endblock %}
+
+{% block answer %}
+	{% for answer in answers %}
+	    <div class="answer">
+	        <div class="row">
+	            <div class="span2">
+	                <img src="http://lorempixel.com/80/80/">
+	                <div class="row">
+	            		<div class="span">
+	            			<div class="like"><span class="badge">{{answer.author.rating}}</span></div>
+	            		</div>            
+	           			<div class="span1">               
+	                    	<a class="btn btn-mini" href="#"> <i class="icon-chevron-up"></i></a>
+	                    	<div><a class="btn btn-mini" href="#"> <i class="icon-chevron-down"></i></a></div>
+	               		</div>
+	            	</div>
+	            </div>
+	            <div class="span6">
+	                <p>{{answer.text}}</p>
+	                <div>
+	                      
+	                </div>                          
+	            </div>
+	        </div>
+	    </div>
+    {% endfor %}
+    <hr>
+	    <div class="area_ans">
+		    <p><textarea class="span9" rows="7" cols="45" name="text"></textarea></p>
+		    <p><input type="submit" value="Answer"></p>
+	    </div>
+	</hr>
+    
+{% endblock %}

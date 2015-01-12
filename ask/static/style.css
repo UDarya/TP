@@ -5,8 +5,23 @@
 	padding: 20px 0px;
 }
 
+.question1 {
+	margin-bottom: 30px;
+	padding: 20px 0px;
+}
+
+.answer {
+	border:solid 1px lightgrey;
+	margin-bottom: 30px;
+	padding: 20px 0px;
+}
+
 .checkbox {
 	margin-bottom: 10px;
+}
+.area_ans {
+	margin-bottom: 30px;
+	padding: 20px 0px;
 }
 
 img{
@@ -15,5 +30,9 @@ img{
 	margin-bottom: 4px
 }
 .like {
-margin-left: 20px;
+	margin-left: 20px; 
+	margin-top: 10px ;
+}
+.btn-mini  {
+	margin-left: 30px;
 }

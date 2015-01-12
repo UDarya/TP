@@ -8,15 +8,16 @@
     <body>
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
-          <a class="brand" href="#">Ask</a>
+          <a class="brand" href="http://localhost/">Ask</a>
           <ul class="nav">
             <li><form class="navbar-search pull-left">
               <input type="text" class="search-query" placeholder="Search">
             </form></li>
           </ul>
-          <a href="#" class="btn btn-danger offset5">Ask!</a>
-          {% block login %}
+          {% block logout %}
           {% endblock %}
+          <a href="#" class="btn btn-danger offset5">Ask!</a>
+          
         </div>
         </div>
       <div class="container">
@@ -25,6 +26,9 @@
 
                 {% block main %}
                 {% endblock %}
+
+                {% block answer %}
+                {% endblock %}                
 
               </div>
                <div class="span3">

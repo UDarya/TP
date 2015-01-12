@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
 {% block main %}
-
-<h2>Best questions</h2>
-
-{% for i in "12345" %}
+    <ul class="nav">
+        <b>Sorting by</b>
+        <a href="/sort">Raiting</a>
+        <a href="/">Date of added</a>
+    </ul> 
+{% for question in questions %}
     <div class="question">
         <div class="row">
             <div class="span2">
                 <img src="http://lorempixel.com/120/120/">
                 <div class="row">
             		<div class="span">
-            			<div class="like"><span class="badge">33</span></div>
+            			<div class="like"><span class="badge">{{question.author.rating}}</span></div>
             		</div>            
            			<div class="span1">               
                     	<a class="btn btn-mini" href="#"> <i class="icon-chevron-up"></i></a>
@@ -20,11 +22,14 @@
             	</div>
             </div>
             <div class="span6">
-                <h4><a href="#">How to build lunopark</a></h4>
-                <p>Some text long long long</p>
+                <h4><a href="/answer/{{question.id}}">{{question.title}}</a></h4>
+                <p>{{question.text}}</p>
                 <div>
-                    <a href="#">answers <span class="badge">33</span></a>
-                      Tags: lol, pop, rock
+                    <a href="/answer/{{question.id}}">answers <span class="badge">{{question.answer__count}}</span></a>
+                    <b>Tags:</b>
+                    {% for tag in question.tags.all %}
+                       <a> {{tag.word}}</a>
+                    {% endfor %}
                 </div>                          
             </div>
         </div>
@@ -33,13 +38,14 @@
 
     <div class="pagination">
         <ul>
-            <li><a href="#">Prev</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Next</a></li>
+            {% if questions.has_previous %}
+                <li><a href="?page={{ questions.previous_page_number }}">prev</a></li>
+            {% endif %}
+
+           <li><a href="?page={{questions.number}}">{{ questions.number }} of {{questions.paginator.num_pages }}</a></li>
+                {% if questions.has_next %}
+                    <li><a href="?page={{ questions.next_page_number }}">next</a></li>
+                {% endif %}        
         </ul>
     </div>
 
@@ -55,8 +61,8 @@
 
 {% block logout %}
         <ul class="nav pull-right">
-          <li><a href="#">log in</a></li>
-          <li><a href="#">register</a></li>
+          <li><a href="http://localhost/login">log in</a></li>
+          <li><a href="http://localhost/signup">register</a></li>
         </ul>
 {% endblock %}
 
